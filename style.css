@@ -1,0 +1,489 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+header {
+  background-color: #12304a;
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+main {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+main h2 {
+  margin-bottom: 30px;
+}
+
+.user-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.user-card {
+  background-color: white;
+  width: 280px;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px #00000015;
+}
+
+.user-card h3 {
+  margin-bottom: 15px;
+}
+
+.user-card p {
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.user-card a {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+}
+
+.user-card a:hover {
+  background-color: #1d4ed8;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  color: #64748b;
+}
+
+/* Manager Login Page */
+
+.login-body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #eaf0f6;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 420px;
+  background-color: white;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px #00000020;
+}
+
+.login-box h1 {
+  text-align: center;
+  color: #12304a;
+  margin-bottom: 12px;
+}
+
+.login-box p {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+.login-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-box label {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.login-box input {
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+}
+
+.login-box input:focus {
+  border-color: #2563eb;
+}
+
+.login-box button {
+  padding: 12px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-box button:hover {
+  background-color: #1d4ed8;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 22px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+/* Manager Dashboard */
+
+.dashboard-body {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background-color: #12304a;
+  color: white;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  font-size: 21px;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar nav a,
+.logout {
+  color: white;
+  text-decoration: none;
+  padding: 13px;
+  border-radius: 6px;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background-color: #2563eb;
+}
+
+.logout {
+  margin-top: auto;
+  background-color: #b91c1c;
+  text-align: center;
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: 30px;
+  min-width: 0;
+}
+
+.dashboard-header {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 3px 10px #00000010;
+}
+
+.dashboard-header h1 {
+  margin-bottom: 10px;
+  color: #12304a;
+}
+
+.dashboard-header p {
+  color: #64748b;
+}
+
+.summary-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.summary-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  flex: 1 1 200px;
+  box-shadow: 0 3px 10px #00000010;
+}
+
+.summary-card h3 {
+  color: #12304a;
+  margin-bottom: 15px;
+}
+
+.summary-card p {
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.summary-card a,
+.action-links a {
+  display: inline-block;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 5px;
+  margin: 4px;
+}
+
+.summary-card a:hover,
+.action-links a:hover {
+  background-color: #1d4ed8;
+}
+
+.management-section {
+  background-color: white;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px #00000010;
+  scroll-margin-top: 20px;
+}
+
+.management-section h2 {
+  color: #12304a;
+  margin-bottom: 12px;
+}
+
+.management-section p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.action-links {
+  margin-top: 15px;
+}
+
+@media (max-width: 700px) {
+  .dashboard-body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .sidebar h2 {
+    margin-bottom: 20px;
+  }
+
+  .logout {
+    margin-top: 20px;
+  }
+
+  .dashboard-main {
+    padding: 15px;
+  }
+}
+
+/* Student Login Page */
+
+.student-login {
+  border-top: 5px solid #0d9488;
+}
+
+.student-login h1 {
+  color: #0f766e;
+}
+
+.student-login input:focus {
+  border-color: #0d9488;
+}
+
+.student-login button {
+  background-color: #0d9488;
+}
+
+.student-login button:hover {
+  background-color: #0f766e;
+}
+
+/* Student Dashboard */
+
+.student-sidebar {
+  background-color: #134e4a;
+}
+
+.student-sidebar nav a:hover,
+.student-sidebar nav a.active {
+  background-color: #0d9488;
+}
+
+.student-header {
+  border-left: 5px solid #0d9488;
+}
+
+.student-header h1 {
+  color: #0f766e;
+}
+
+.student-info {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.student-info p {
+  background-color: #f1f5f9;
+  padding: 14px;
+  border-radius: 6px;
+}
+
+.paid-status {
+  color: #15803d;
+  font-weight: bold;
+}
+
+.complaint-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.complaint-form label {
+  font-weight: bold;
+  color: #334155;
+}
+
+.complaint-form input,
+.complaint-form select,
+.complaint-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.complaint-form input:focus,
+.complaint-form select:focus,
+.complaint-form textarea:focus {
+  outline: none;
+  border-color: #0d9488;
+}
+
+.complaint-form textarea {
+  resize: vertical;
+}
+
+.complaint-form button {
+  padding: 12px;
+  background-color: #0d9488;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.complaint-form button:hover {
+  background-color: #0f766e;
+}
+
+/* Staff Login Page */
+
+.staff-login {
+  border-top: 5px solid #d97706;
+}
+
+.staff-login h1 {
+  color: #92400e;
+}
+
+.staff-login input:focus {
+  border-color: #d97706;
+}
+
+.staff-login button {
+  background-color: #d97706;
+}
+
+.staff-login button:hover {
+  background-color: #b45309;
+}
+
+/* Staff Dashboard */
+
+.staff-sidebar {
+  background-color: #78350f;
+}
+
+.staff-sidebar nav a:hover,
+.staff-sidebar nav a.active {
+  background-color: #d97706;
+}
+
+.staff-header {
+  border-left: 5px solid #d97706;
+}
+
+.staff-header h1 {
+  color: #92400e;
+}
+
+.staff-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.staff-info p {
+  background-color: #fff7ed;
+  padding: 14px;
+  border-radius: 6px;
+  line-height: 1.5;
+}
+
+.pending-status {
+  color: #b45309;
+  font-weight: bold;
+}
+
+.staff-sidebar .logout {
+  background-color: #b91c1c;
+}
+
+@media (max-width: 700px) {
+  .staff-sidebar {
+    width: 100%;
+  }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Login</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #eaf0f8;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .login-box {
+            background: white;
+            width: 100%;
+            max-width: 460px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-box h1 {
+            margin: 0 0 10px 0;
+            text-align: center;
+            color: #14334d;
+        }
+
+        .login-box p.subtitle {
+            margin: 0 0 25px 0;
+            text-align: center;
+            color: #64748b;
+        }
+
+        .login-box label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #14334d;
+        }
+
+        .login-box input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 20px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .login-box input:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        #loginError {
+            color: #dc2626;
+            margin: 0 0 15px 0;
+            min-height: 18px;
+            font-size: 14px;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            background: #2563eb;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .login-box button:hover {
+            background: #1d4ed8;
+        }
+
+        .login-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 22px;
+        }
+
+        .login-links a {
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .login-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-box">
+
+        <h1>Manager Login</h1>
+        <p class="subtitle">Welcome back! Please login to continue.</p>
+
+        <form onsubmit="return loginUser()">
+
+            <label for="username">Username</label>
+            <input type="text" id="username"
+                   placeholder="Enter your username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password"
+                   placeholder="Enter your password" required>
+
+            <!-- Login error message appears here -->
+            <p id="loginError"></p>
+
+            <button type="submit">Login</button>
+
+        </form>
+
+        <div class="login-links">
+            <a href="first.html">Back to Home</a>
+            <a href="manager_regi.html">Registration</a>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

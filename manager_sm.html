@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .management-page {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            margin: 20px;
+        }
+
+        .management-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .student-form {
+            margin-top: 25px;
+        }
+
+        .student-form h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #172b4d;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #172b4d;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .action-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .action-links button {
+            background: #2563eb;
+            color: #fff;
+            padding: 12px 22px;
+            border: none;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .action-links button:hover {
+            background: #1d4ed8;
+        }
+
+        #message {
+            display: none;
+            padding: 12px;
+            margin-top: 20px;
+            border-radius: 6px;
+            text-align: center;
+            overflow-wrap: anywhere;
+        }
+
+        #message.success {
+            display: block;
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        #message.error {
+            display: block;
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .records-section {
+            margin-top: 30px;
+            overflow-x: auto;
+        }
+
+        .records-section h2 {
+            color: #172b4d;
+        }
+
+        #studentTable {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            min-width: 750px;
+        }
+
+        #studentTable th,
+        #studentTable td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        #studentTable th {
+            background: #15344f;
+            color: white;
+        }
+
+        #studentTable tbody tr:nth-child(even) {
+            background: #f5f7fb;
+        }
+
+        .row-button {
+            padding: 7px 10px;
+            margin: 2px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .edit-button {
+            background: #0d9488;
+        }
+
+        .delete-button {
+            background: #dc2626;
+        }
+
+        .empty-message {
+            padding: 15px;
+            color: #64748b;
+        }
+
+        @media (max-width: 700px) {
+            .management-page {
+                padding: 18px;
+                margin: 10px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: auto;
+            }
+        }
+    </style>
+
+    <script src="main.js" defer></script>
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Hostel Manager</h2>
+
+        <nav>
+            <a href="md.html">Dashboard</a>
+            <a href="manager_sm.html" class="active">Students</a>
+            <a href="manager_rm.html">Rooms</a>
+            <a href="manager_pm.html">Payments</a>
+        </nav>
+
+        <a href="index.html" class="logout">Logout</a>
+    </aside>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard-main">
+        <div class="management-page">
+
+            <header class="management-header">
+                <h1>Student Management</h1>
+                <p>Manage student records and information.</p>
+            </header>
+
+            <!-- Student Information Form -->
+            <section class="student-form">
+                <h2>Student Information</h2>
+
+                <form id="studentForm">
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="student_id">Student ID</label>
+                            <input type="text" id="student_id"
+                                   name="student_id"
+                                   placeholder="Enter Student ID"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="full_name">Full Name</label>
+                            <input type="text" id="full_name"
+                                   name="full_name"
+                                   placeholder="Enter Full Name"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email"
+                                   name="email"
+                                   placeholder="Enter Email Address">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone"
+                                   name="phone"
+                                   placeholder="Enter Phone Number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" name="gender">
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" name="dob">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <input type="text" id="department"
+                                   name="department"
+                                   placeholder="Enter Department">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="admission_date">Admission Date</label>
+                            <input type="date" id="admission_date"
+                                   name="admission_date">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guardian_name">Guardian Name</label>
+                            <input type="text" id="guardian_name"
+                                   name="guardian_name"
+                                   placeholder="Enter Guardian Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guardian_phone">Guardian Phone</label>
+                            <input type="tel" id="guardian_phone"
+                                   name="guardian_phone"
+                                   placeholder="Enter Guardian Phone">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="address">Address</label>
+                            <textarea id="address" name="address"
+                                      rows="3"
+                                      placeholder="Enter Student Address"></textarea>
+                        </div>
+
+                    </div>
+
+                    <!-- Four Functional Buttons -->
+                    <div class="action-links">
+                        <button type="button" id="addStudent">
+                            Add Student
+                        </button>
+
+                        <button type="button" id="viewStudents">
+                            View Students
+                        </button>
+
+                        <button type="button" id="updateStudent">
+                            Update Student
+                        </button>
+
+                        <button type="button" id="deleteStudent">
+                            Delete Student
+                        </button>
+                    </div>
+                </form>
+
+                <div id="message" role="status" aria-live="polite"></div>
+            </section>
+
+            <!-- Student Records Table -->
+            <section class="records-section" id="recordsSection" hidden>
+                <h2>Student Records</h2>
+
+                <table id="studentTable">
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Gender</th>
+                            <th>Department</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTableBody"></tbody>
+                </table>
+
+                <p id="emptyMessage" class="empty-message" hidden>
+                    No student records found.
+                </p>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>

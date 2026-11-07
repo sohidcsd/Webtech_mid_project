@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <aside class="sidebar student-sidebar">
+
+        <h2>Student Portal</h2>
+
+        <nav>
+            <a href="student-dashboard.html" class="active">Dashboard</a>
+            <a href="#room">Room Details</a>
+            <a href="#payment">Payment Status</a>
+            <a href="#complaint">Complaints</a>
+        </nav>
+
+        <a href="index.html" class="logout">Logout</a>
+
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header student-header">
+            <h1>Student Dashboard</h1>
+            <p>Welcome to your hostel student portal.</p>
+        </header>
+
+        <section class="summary-cards">
+
+            <div class="summary-card">
+                <h3>Room Details</h3>
+                <p>Check your assigned room information.</p>
+                <a href="#room">View Room</a>
+            </div>
+
+            <div class="summary-card">
+                <h3>Payment Status</h3>
+                <p>Check your hostel fee information.</p>
+                <a href="#payment">View Payment</a>
+            </div>
+
+            <div class="summary-card">
+                <h3>Complaints</h3>
+                <p>Report hostel problems.</p>
+                <a href="#complaint">Submit Complaint</a>
+            </div>
+
+        </section>
+
+        <section class="management-section" id="room">
+
+            <h2>My Room Details</h2>
+
+            <div class="student-info">
+                <p><strong>Student Name:</strong> Roban</p>
+                <p><strong>Room Number:</strong> 205</p>
+                <p><strong>Room Type:</strong> Shared Room</p>
+                <p><strong>Bed Number:</strong> 02</p>
+            </div>
+
+        </section>
+
+        <section class="management-section" id="payment">
+
+            <h2>My Payment Status</h2>
+
+            <div class="student-info">
+                <p><strong>Monthly Hostel Fee:</strong> $5,000</p>
+                <p><strong>Paid Amount:</strong> $5,000</p>
+                <p><strong>Due Amount:</strong> $0</p>
+                <p><strong>Status:</strong>
+                    <span class="paid-status">Paid</span>
+                </p>
+            </div>
+
+        </section>
+
+        <section class="management-section" id="complaint">
+
+            <h2>Submit a Complaint</h2>
+
+            <form class="complaint-form" action="#complaint">
+
+                <label for="category">Complaint Category</label>
+
+                <select id="category" name="category" required>
+                    <option value="">Select a category</option>
+                    <option value="electricity">Electricity</option>
+                    <option value="water">Water Problem</option>
+                    <option value="room">Room Facilities</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="description">Complaint Description</label>
+
+                <textarea
+                    id="description"
+                    name="description"
+                    rows="4"
+                    placeholder="Describe your problem..."
+                    required
+                ></textarea>
+
+                <button type="submit">Submit Complaint</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

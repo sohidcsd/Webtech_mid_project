@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <aside class="sidebar staff-sidebar">
+
+        <h2>Staff Portal</h2>
+
+        <nav>
+            <a href="staff-dashboard.html" class="active">Dashboard</a>
+            <a href="#checkin">Check-in / Check-out</a>
+            <a href="#complaints">Complaints</a>
+            <a href="#inspection">Room Inspection</a>
+        </nav>
+
+        <a href="index.html" class="logout">Logout</a>
+
+    </aside>
+
+    <main class="dashboard-main">
+
+        <header class="dashboard-header staff-header">
+            <h1>Staff Dashboard</h1>
+            <p>Manage daily hostel activities.</p>
+        </header>
+
+        <section class="summary-cards">
+
+            <div class="summary-card">
+                <h3>Check-in / Check-out</h3>
+                <p>Manage student entry and departure records.</p>
+                <a href="#checkin">View Details</a>
+            </div>
+
+            <div class="summary-card">
+                <h3>Complaint Handling</h3>
+                <p>Review complaints and their status.</p>
+                <a href="#complaints">View Complaints</a>
+            </div>
+
+            <div class="summary-card">
+                <h3>Room Inspection</h3>
+                <p>Review cleanliness and maintenance.</p>
+                <a href="#inspection">Inspect Rooms</a>
+            </div>
+
+        </section>
+
+        <section class="management-section" id="checkin">
+
+            <h2>Check-in / Check-out Management</h2>
+
+            <p>Student entry and departure information.</p>
+
+            <div class="staff-info">
+                <p><strong>Student Name:</strong> Sample Student</p>
+                <p><strong>Room Number:</strong> 205</p>
+                <p><strong>Check-in Time:</strong> 09:00 AM</p>
+                <p><strong>Check-out Time:</strong> 05:00 PM</p>
+            </div>
+
+            <div class="action-links">
+                <a href="#checkin">Record Check-in</a>
+                <a href="#checkin">Record Check-out</a>
+            </div>
+
+        </section>
+
+        <section class="management-section" id="complaints">
+
+            <h2>Complaint Handling</h2>
+
+            <p>Review student complaints and their current status.</p>
+
+            <div class="staff-info">
+                <p><strong>Complaint:</strong> Water supply problem</p>
+                <p><strong>Room Number:</strong> 205</p>
+                <p><strong>Status:</strong>
+                    <span class="pending-status">Pending</span>
+                </p>
+            </div>
+
+            <div class="action-links">
+                <a href="#complaints">View Complaint</a>
+                <a href="#complaints">Mark as Resolved</a>
+            </div>
+
+        </section>
+
+        <section class="management-section" id="inspection">
+
+            <h2>Room Inspection</h2>
+
+            <p>Review room cleanliness and maintenance issues.</p>
+
+            <div class="staff-info">
+                <p><strong>Room Number:</strong> 205</p>
+                <p><strong>Cleanliness:</strong> Needs Inspection</p>
+                <p><strong>Maintenance:</strong> Water Supply</p>
+                <p><strong>Repair Status:</strong> Pending</p>
+            </div>
+
+            <div class="action-links">
+                <a href="#inspection">Inspect Room</a>
+                <a href="#inspection">Update Inspection</a>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
